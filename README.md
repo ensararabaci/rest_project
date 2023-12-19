@@ -6,6 +6,7 @@ Bu bir Rest API ödevidir.
 Conf Path: /etc/nginx/sites-enabled/ensarhttp
 
 Conf Text:
+```
 server {
     listen 82;
     location / {
@@ -13,14 +14,16 @@ server {
         proxy_pass http://unix:/home/ubuntu/odev/ensarproject.sock;
     }
 }
+```
 
 
 3. GUNICORN Komutu: /home/ubuntu/odev/ensarprojectenv/bin/gunicorn --workers 3 --bind unix:ensarproject.sock -m 007 wsgi:app
 
 4. Ubuntu System Service:
 Service Path: /etc/systemd/system/ensarservice.service
-Service Text:
 
+Service Text:
+```
 [Unit]
 Description=Gunicorn ENSAR
 After=network.target
@@ -34,5 +37,5 @@ ExecStart=/home/ubuntu/odev/ensarprojectenv/bin/gunicorn --workers 3 --bind unix
 
 [Install]
 WantedBy=multi-user.target
-
+```
 
