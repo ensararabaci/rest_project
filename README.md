@@ -1,6 +1,6 @@
 Bu bir Rest API ödevidir. 
 
-1. Rest Api Kullanımı: http://127.0.0.1/users/5 (Rest api portu 80 portuna ayarlanmıştır. Farklı bir port kullanılırsa URL değişmelidir.)
+1. Rest Api Kullanımı: http://127.0.0.1:82/users/5
 
 2. NGINX Conf Dosyası:
 Conf Path: /etc/nginx/sites-enabled/ensarhttp
